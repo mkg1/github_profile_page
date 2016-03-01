@@ -20,4 +20,9 @@ class UserTest < ActiveSupport::TestCase
     u = User.new("mkg1")
     assert_equal "battleship", u.repo_names[0]
   end
+
+  test "retrieve repository ids" do
+    u = User.new("mkg1")
+    assert_equal 51312970, u.repo_ids[0]
+  end
 end

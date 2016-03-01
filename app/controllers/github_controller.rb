@@ -6,5 +6,12 @@ class GithubController < ApplicationController
       @username =  params[:user_name]
       u = User.new(params[:user_name])
       @repositories = u.repo_names
+      @user_full_name = u.user_full_name
+      @following = u.following
+      @followers = u.followers
+      @avatar = u.image
+      @company = u.company
+      @location = u.location
+      @orgs = u.organizations
   end
 end

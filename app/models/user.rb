@@ -6,8 +6,8 @@ class User
   attr_reader :user_name, :user
   def initialize(user_name)
     # @search_term = JSON.parse(File.read("./test/fixtures/repos.json"))
-    @user_repos = HTTParty.get("https://api.github.com/users/#{user_name}/repos")
-    @user = HTTParty.get("https://api.github.com/users/#{user_name}")
+    @user_repos = HTTParty.get("https://api.github.com/users/#{user_name}/repos")#/?sort=updated&direction=desc&access_token=#{ENV["GITHUB_KEY"]}")
+    @user = HTTParty.get("https://api.github.com/users/#{user_name}")#/?access_token=#{ENV["GITHUB_KEY"]}")
   end
   # def show_repos
   #   repos = []
@@ -19,6 +19,30 @@ class User
 
   def user_full_name
     @user["name"]
+  end
+
+  def followers
+    @user["followers"]
+  end
+
+  def following
+    @user["following"]
+  end
+
+  def image
+    @user["avatar_url"]
+  end
+
+  def company
+    @user["company"]
+  end
+
+  def location
+    @user["location"]
+  end
+
+  def organizations
+    @user["organizations_url"]
   end
 
   def repo_ids
@@ -46,5 +70,5 @@ class User
   end
 end
 
-# user = User.new("masonfmatthews")
-# user.user_full_name
+# user = User.new("mkg1")
+# p user.image
