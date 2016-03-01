@@ -1,0 +1,6 @@
+<h1>Please enter a username: </h1>
+
+<%= form_tag github_show_path do %>
+  <%= text_field_tag :user_name%>
+  <%= button_tag "Get user's repo" %>
+<% end %>
