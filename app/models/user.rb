@@ -3,7 +3,7 @@ require 'byebug'
 # require "#{Rails.root}/test/fixtures/playlist.json"
 
 class User
-  attr_reader :user_name, :user
+  attr_reader :user_repos, :user
   def initialize(user_name)
     # @search_term = JSON.parse(File.read("./test/fixtures/repos.json"))
     @user_repos = HTTParty.get("https://api.github.com/users/#{user_name}/repos")#/?sort=updated&direction=desc&access_token=#{ENV["GITHUB_KEY"]}")
@@ -45,6 +45,10 @@ class User
     @user["organizations_url"]
   end
 
+  def joined
+    @user["created_at"]
+  end
+
   def repo_ids
     repo_ids = []
     @user_repos.each do |x|
@@ -70,5 +74,5 @@ class User
   end
 end
 
-# user = User.new("mkg1")
-# p user.image
+user = User.new("mkg1")
+p user.repo_names["name"]
