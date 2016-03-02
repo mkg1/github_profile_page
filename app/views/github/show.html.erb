@@ -279,13 +279,13 @@ The username you searched for is: <%= @username %>
 
     <h3 class="repo-list-name">
       <a href="/<%=@username%>/rails_assignments" itemprop="name codeRepository">
-        rails_assignments</a>
+        <%=x["name"]%></a>
     </h3>
 
 
 
       <p class="repo-list-description" itemprop="description">
-        Assignments for the Rails course at The Iron Yard's Durham Campus
+      <%=x["description"]%>
       </p>
 
     <p class="repo-list-meta">

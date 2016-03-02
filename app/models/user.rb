@@ -75,4 +75,4 @@ class User
 end
 
 user = User.new("mkg1")
-p user.repo_names["name"]
+p user.repo_names
