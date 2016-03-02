@@ -49,6 +49,22 @@ class User
     @user["created_at"]
   end
 
+  def stars
+    @user["stargazers_count"]
+  end
+
+  def forks
+    @user["forks"]
+  end
+
+  def updated
+    @user["updated_at"]
+  end
+
+  def language
+    @user["language"]
+  end
+
   def repo_ids
     repo_ids = []
     @user_repos.each do |x|

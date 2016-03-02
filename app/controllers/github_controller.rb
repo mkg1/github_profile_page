@@ -15,5 +15,6 @@ class GithubController < ApplicationController
       @orgs = u.organizations
       @joined = u.joined
       @user_repos = u.user_repos
+      
   end
 end
