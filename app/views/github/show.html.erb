@@ -260,7 +260,7 @@
     <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter" data-filterable-type="substring">
 
 
-<%= @user_repos.each_with_index do |x, i|  %>
+<% @user_repos.each_with_index do |x, i|  %>
 
   <div class="repo-list-item public source" itemprop="owns" itemscope itemtype="http://schema.org/Code">
     <div class="repo-list-stats">
@@ -299,27 +299,6 @@
 
 <% end %>
 
-
-
-
-
-
-
-
-
-
-
-</ul>
-
-</div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-      </div>
       <div class="modal-backdrop"></div>
     </div>
 
